@@ -70,6 +70,7 @@ const Stories = ({ story }) => {
                       <a
                         href={val.url}
                         target='_blank'
+                        rel='noreferrer'
                         role={'button'}
                         className='button-theme w-full bg-gradient-to-b from-slate-900 to-black shadow-md shadow-black text-center text-slate-100 py-1.5'
                       >
