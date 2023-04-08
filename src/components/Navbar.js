@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 import { selectTotalQuantity, setOpenCart } from '../app/CartSlice';
-import { ArrowLongLeftIcon, ArrowLongUpIcon } from '@heroicons/react/24/solid';
+import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
