@@ -10,11 +10,15 @@ import {
 } from '@heroicons/react/24/outline';
 
 import { selectTotalQuantity, setOpenCart } from '../app/CartSlice';
+import { ArrowLongLeftIcon, ArrowLongUpIcon } from '@heroicons/react/24/solid';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [navState, setNavState] = useState(false);
 
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const totalQty = useSelector(selectTotalQuantity);
 
@@ -73,6 +77,14 @@ const Navbar = () => {
             </li>
             <li className='grid items-center'>
               <HeartIcon
+                className={`icon-style ${navState && 'filter brightness-0'}`}
+              />
+            </li>
+            <li className='grid items-center'>
+              <ArrowLongLeftIcon
+                onClick={() => {
+                  navigate('/');
+                }}
                 className={`icon-style ${navState && 'filter brightness-0'}`}
               />
             </li>
