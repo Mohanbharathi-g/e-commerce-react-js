@@ -24,7 +24,6 @@ import {
   setPostalCode,
   selectCartItem,
   setClearCartItems,
-  selectOrders,
   setOrders,
 } from '../app/CartSlice';
 

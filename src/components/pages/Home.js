@@ -102,6 +102,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchUserDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, user?.uid]);
 
   return (
