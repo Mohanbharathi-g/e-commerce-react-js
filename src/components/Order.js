@@ -23,12 +23,6 @@ const Order = ({ cartItem }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // useEffect(() => {
-  //   console.log('hiii');
-  // }, [item, dispatch]);
-  // console.log(item);
-  // console.log(order);
-
   return (
     <>
       <div className='blur-effect-theme text-slate-900 flex flex-col gap-1 p-5  '>
