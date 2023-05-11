@@ -53,7 +53,6 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', navScroll);
     };
-    // eslint-disable-next-line
   }, []);
 
   // const clearData = () => {
