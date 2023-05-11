@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { useNavigate } from 'react-router-dom';
+
 import {
   getTotalFromCart,
   selectCartItem,
@@ -16,6 +18,7 @@ import CartEmpty from './Utlis/cart/CartEmpty';
 import CartItem from './Utlis/cart/CartItem';
 
 const Cart = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const ifCartState = useSelector(selectCartState);
@@ -81,6 +84,9 @@ const Cart = () => {
               <button
                 type='button'
                 className='button-theme bg-theme-cart text-white'
+                onClick={() => {
+                  navigate('/addingDetails');
+                }}
               >
                 Check Out
               </button>

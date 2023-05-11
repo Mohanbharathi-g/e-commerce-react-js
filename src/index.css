@@ -84,4 +84,12 @@
   .transitions-theme {
     @apply transition-all duration-700 ease-in-out cursor-pointer;
   }
+  .bg-image {
+    /* width: 20px; */
+    background-image: url(../src/assets/product10.png);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
 }

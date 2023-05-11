@@ -12,6 +12,7 @@ import {
 import { selectTotalQuantity, setOpenCart } from '../app/CartSlice';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
 import { useNavigate } from 'react-router-dom';
+import profileImage from '../assets/photo-1511367461989-f85a21fda167.jpg';
 
 const Navbar = () => {
   const [navState, setNavState] = useState(false);
@@ -77,6 +78,9 @@ const Navbar = () => {
             </li>
             <li className='grid items-center'>
               <HeartIcon
+                onClick={() => {
+                  navigate('/history');
+                }}
                 className={`icon-style ${navState && 'filter brightness-0'}`}
               />
             </li>
@@ -106,6 +110,18 @@ const Navbar = () => {
                   {totalQty}
                 </div>
               </button>
+            </li>
+            <li className='grid items-center'>
+              <img
+                src={profileImage}
+                alt='ima'
+                className={`icon-style rounded-lg ${
+                  navState && 'filter brightness-100'
+                }`}
+                onClick={() => {
+                  navigate('/profile');
+                }}
+              />
             </li>
           </ul>
         </nav>

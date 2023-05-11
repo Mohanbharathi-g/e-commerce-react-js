@@ -5,25 +5,46 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../assets/product8.png';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebase/firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  setUser,
+  setAddress,
+  setMail,
+  setName,
+  setImageAsset,
+} from '../../app/CartSlice';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
 
+  const clearData = () => {
+    dispatch(setName(null));
+
+    dispatch(setMail(null));
+    dispatch(setAddress(null));
+    dispatch(setImageAsset(null));
+
+    dispatch(setAddress(null));
+    dispatch(setUser(null));
+  };
+
   const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    console.log(`hiii`);
     e.preventDefault();
+
+    clearData();
     await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential);
-
+        // console.log(id);
         navigate('/home');
       })
       .catch((err) => {
-        console.log(err.code);
+        // console.log(err.code);
         if (err.code === 'auth/user-not-found') {
           alert('user not found');
         } else if (err.code === 'auth/wrong-password') {

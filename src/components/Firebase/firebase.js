@@ -2,7 +2,10 @@ import { initializeApp } from 'firebase/app';
 
 import { getAuth } from 'firebase/auth';
 
-// Your web app's Firebase configuration
+import { getFirestore } from 'firebase/firestore';
+
+import { getStorage } from 'firebase/storage';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyAIUTyRwq2alPfSTIIobo4GYh1fmxTkoAw',
   authDomain: 'nike-e-commerce-df174.firebaseapp.com',
@@ -15,3 +18,10 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
+const db = getFirestore(app);
+
+const firestore = getFirestore(app);
+
+const storage = getStorage(app);
+
+export { db, firestore, storage };
