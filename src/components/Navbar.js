@@ -9,14 +9,14 @@ import { selectTotalQuantity, setOpenCart } from '../app/CartSlice';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
 import { useNavigate } from 'react-router-dom';
 import profileImage from '../assets/photo-1511367461989-f85a21fda167.jpg';
-import {
-  setUser,
-  setAddress,
-  setMail,
-  setName,
-  setImageAsset,
-  setNumber,
-} from '../app/CartSlice';
+// import {
+//   setUser,
+//   setAddress,
+//   setMail,
+//   setName,
+//   setImageAsset,
+//   setNumber,
+// } from '../app/CartSlice';
 
 const Navbar = () => {
   const [navState, setNavState] = useState(false);
@@ -48,7 +48,6 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    clearData();
     window.addEventListener('scroll', navScroll);
 
     return () => {
@@ -57,17 +56,17 @@ const Navbar = () => {
     // eslint-disable-next-line
   }, []);
 
-  const clearData = () => {
-    dispatch(setName(null));
+  // const clearData = () => {
+  //   dispatch(setName(null));
 
-    dispatch(setMail(null));
-    dispatch(setAddress(null));
-    dispatch(setImageAsset(null));
+  //   dispatch(setMail(null));
+  //   dispatch(setAddress(null));
+  //   dispatch(setImageAsset(null));
 
-    dispatch(setAddress(null));
-    dispatch(setUser(null));
-    dispatch(setNumber(null));
-  };
+  //   dispatch(setAddress(null));
+  //   dispatch(setUser(null));
+  //   dispatch(setNumber(null));
+  // };
 
   return (
     <>
