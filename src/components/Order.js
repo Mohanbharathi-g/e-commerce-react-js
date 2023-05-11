@@ -20,6 +20,7 @@ const Order = ({ cartItem }) => {
 
   useEffect(() => {
     dispatch(setShipTotal(totalAmount));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // useEffect(() => {

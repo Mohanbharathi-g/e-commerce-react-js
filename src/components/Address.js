@@ -39,7 +39,7 @@ const Address = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const name = useSelector(selectName);
-  const order = useSelector(selectOrders);
+  // const order = useSelector(selectOrders);
   const mail = useSelector(selectMail);
 
   const number = useSelector(selectNumber);
