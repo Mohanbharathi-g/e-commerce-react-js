@@ -3,16 +3,20 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import logo from '../assets/logo.png';
-import {
-  HeartIcon,
-  MagnifyingGlassIcon,
-  ShoppingBagIcon,
-} from '@heroicons/react/24/outline';
+import { HeartIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 
 import { selectTotalQuantity, setOpenCart } from '../app/CartSlice';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
 import { useNavigate } from 'react-router-dom';
 import profileImage from '../assets/photo-1511367461989-f85a21fda167.jpg';
+import {
+  setUser,
+  setAddress,
+  setMail,
+  setName,
+  setImageAsset,
+  setNumber,
+} from '../app/CartSlice';
 
 const Navbar = () => {
   const [navState, setNavState] = useState(false);
@@ -44,12 +48,27 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    clearData();
     window.addEventListener('scroll', navScroll);
 
     return () => {
       window.removeEventListener('scroll', navScroll);
     };
+    // eslint-disable-next-line
   }, []);
+
+  const clearData = () => {
+    dispatch(setName(null));
+
+    dispatch(setMail(null));
+    dispatch(setAddress(null));
+    dispatch(setImageAsset(null));
+
+    dispatch(setAddress(null));
+    dispatch(setUser(null));
+    dispatch(setNumber(null));
+  };
+
   return (
     <>
       <header
@@ -70,12 +89,12 @@ const Navbar = () => {
             />
           </div>
           <ul className='flex justify-center items-center gap-3'>
-            <li className='grid items-center'>
+            {/* <li className='grid items-center'>
               {' '}
               <MagnifyingGlassIcon
                 className={`icon-style ${navState && 'filter brightness-0'}`}
               />
-            </li>
+            </li> */}
             <li className='grid items-center'>
               <HeartIcon
                 onClick={() => {

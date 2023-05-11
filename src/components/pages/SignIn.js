@@ -12,6 +12,7 @@ import {
   setMail,
   setName,
   setImageAsset,
+  setNumber,
 } from '../../app/CartSlice';
 
 const SignIn = () => {
@@ -26,6 +27,7 @@ const SignIn = () => {
 
     dispatch(setAddress(null));
     dispatch(setUser(null));
+    dispatch(setNumber(null));
   };
 
   const [password, setPassword] = useState('');

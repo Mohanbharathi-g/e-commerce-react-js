@@ -5,9 +5,31 @@ import logo from '../../assets/product6.png';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebase/firebase';
+import { useDispatch } from 'react-redux';
+import {
+  setUser,
+  setAddress,
+  setMail,
+  setName,
+  setImageAsset,
+  setNumber,
+} from '../../app/CartSlice';
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState('');
+  const clearData = () => {
+    dispatch(setName(null));
+
+    dispatch(setMail(null));
+    dispatch(setAddress(null));
+    dispatch(setImageAsset(null));
+
+    dispatch(setAddress(null));
+    dispatch(setUser(null));
+    dispatch(setNumber(null));
+  };
 
   const [password, setPassword] = useState('');
 
@@ -15,6 +37,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    clearData();
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);

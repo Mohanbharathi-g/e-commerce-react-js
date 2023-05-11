@@ -129,14 +129,10 @@ const CartSlice = createSlice({
     },
     setNumber: (state, action) => {
       const inputValue = action.payload;
-      if (inputValue.length > 0 && inputValue.length <= 10) {
-        state.number = inputValue;
-      } else {
-        toast.error('invalid number');
-      }
+
+      state.number = inputValue;
     },
     setAddress: (state, action) => {
-      console.log(action.payload);
       state.address = action.payload;
     },
 

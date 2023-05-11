@@ -114,7 +114,7 @@ const AddProfile = () => {
   const saveUserDetails = async (e) => {
     // console.log('hiii');
 
-    // console.log(user, name, number, address);
+    console.log(user, name, number, address);
 
     e.preventDefault();
     if (name && mail && number && address && user) {
