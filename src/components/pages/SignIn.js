@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../assets/product8.png';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebase/firebase';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   setUser,
   setAddress,
