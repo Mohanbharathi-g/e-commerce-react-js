@@ -140,11 +140,11 @@ const CartSlice = createSlice({
       state.imageAsset = action.payload;
     },
     setUser: (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       state.user = action.payload;
     },
     setUserId: (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       state.userId = action.payload;
     },
     setShipTotal: (state, action) => {
